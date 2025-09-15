@@ -3,8 +3,17 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
 define kr = Character("Kashima Reiko")
+# teke teke girl
+define ak = Character("Akari")
+# random girl? I don't know what to set her as
+define say = Character("Sayuri")
+# another random girl
+Define  yu = Character("yuki")
+# maybe main character?
+
+
+
 
 # The game starts here.
 
@@ -34,5 +43,6 @@ label start:
     # This ends the game.
 
     return
+
 
 
