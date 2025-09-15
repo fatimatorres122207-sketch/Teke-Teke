@@ -4,7 +4,7 @@
 # name of the character.
 
 define e = Character("Eileen")
-
+define kr = Character("Kashima Reiko")
 
 # The game starts here.
 
@@ -34,4 +34,5 @@ label start:
     # This ends the game.
 
     return
+
 
