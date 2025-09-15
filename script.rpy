@@ -10,6 +10,9 @@ define e = Character("Eileen")
 
 label start:
 
+
+
+#cmkwslnckwsacmledks
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -31,3 +34,4 @@ label start:
     # This ends the game.
 
     return
+
