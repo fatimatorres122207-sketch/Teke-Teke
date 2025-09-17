@@ -88,9 +88,18 @@ label start:
 
     scene bus-stop_spring_night
 
+menu:
+    "HIII":
+        yu "ello"
+    "Wasup":
+        yu "whats good"
+    "YO":
+        yu "yo"
+
 
 
     return
+
 
 
 
