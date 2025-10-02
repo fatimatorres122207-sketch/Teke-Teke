@@ -94,11 +94,18 @@ menu:
     "Wasup":
         yu "whats good"
     "YO":
-        yu "yo"
+        "What's going on?":
+        yu "nothing much"
+    "What's up?":
+        yu "oh you know"
+    "So do you wanna walk around after school, and like take some photos at night?":
+        yu  "Sure!"
+# swap to a different scene, maybe a 
 
 
 
     return
+
 
 
 
