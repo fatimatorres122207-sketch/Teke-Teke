@@ -90,21 +90,31 @@ label start:
 
 menu:
     "HIII":
-        yu "ello"
+        yu "ello"  
+        jump picture
     "Wasup":
         yu "whats good"
+        jump picture
     "YO":
-        "What's going on?":
-        yu "nothing much"
+        "What's going on?"
+        jump picture
     "What's up?":
         yu "oh you know"
+        jump picture
+
+
+label picture:
+
     "So do you wanna walk around after school, and like take some photos at night?":
         yu  "Sure!"
-# swap to a different scene, maybe a 
+# swap to a different scene, maybe a cafe scene?
+
+    yu "hey lets go to a cafe so we can get some work done?"
 
 
 
     return
+
 
 
 
