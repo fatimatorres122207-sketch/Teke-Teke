@@ -66,6 +66,9 @@ define say = Character("Sayuri")
 # another random girl
 define yu = Character("Yuki", color="#ffffff", callback=type_sound)
 
+########PLAYER
+define pov = Character("[povname]")
+define pov = Character("[povname]", color = "#78637B")
 
 
 
@@ -78,33 +81,42 @@ if not povname:
  $ povname = "MC"
 
 
-    scene bg busstop_spring_night
-    with fade
+scene bg busstop
 
 
 
 pov "Three of my friends are waiting near the train station for me. I better hurry."
 
-    scene bg busstop_spring_night
-    with fade
+scene bg busstop
 
 
-menu:
-    "HIII":
-        yu "ello"  
-        jump answer
-    "Wasup":
-        yu "whats good"
-        jump answer
-    "YO":
-        "What's going on?"
-        jump answer
-    "What's up?":
-        yu "oh you know"
-        jump answer
+
+label menu1:
+    menu:
+        "HIII":
+            yu "ello"
+            jump answer
+
+        "Wasup":
+            yu "whats good"
+            jump answer
+
+        "YO":
+            yu "What's going on?"
+            jump answer
+
+        "What's up?":
+            yu "oh you know"
+            jump answer
+
+
+
+
 
 
 label answer:
+    # Add your dialogue or logic here
+    yu "So, what do you want to do next?"
 
 
 pov "It's so quiet."
@@ -130,15 +142,13 @@ kr "My leg won't let me walk far. I was trying to get home."
 
 
 
-
-
+label menu2:
     menu:
         "Offer to sit with her":
             jump sit_with
+
         "Keep a cautious distance":
             jump cautious_distance
-
-
 
 
 
@@ -165,36 +175,37 @@ label sit_with:
 
 ######Add audio for teke sound
 play sound "audio/bus_idle.ogg" fadein 0.2
-    pause 0.8
 
-    kr "They told me not to come here after midnight."
 
-    ak "Who told you that?"
 
-    kr "People on late trains. An old woman. A radio. I can't— sometimes I wake up and the floor is different."
+kr "They told me not to come here after midnight."
 
-    say "You mean... like a memory that doesn't belong to you?"
+ak "Who told you that?"
 
-    kr "Yes. Bits. Pieces. There's one that repeats: I run, and the floor is only half beneath me."
+kr "People on late trains. An old woman. A radio. I can't— sometimes I wake up and the floor is different."
+
+say "You mean... like a memory that doesn't belong to you?"
+
+kr "Yes. Bits. Pieces. There's one that repeats: I run, and the floor is only half beneath me."
 
 
 
 #####ADD SOME FLICKERING STUFF
 
-    kr "Can I ask a favor?"
+kr "Can I ask a favor?"
 
-    ak "Of course."
-    kr "If... if you ever hear the tapping of two things running, please—make more noise. Don't be quiet."
+ak "Of course."
+kr "If... if you ever hear the tapping of two things running, please—make more noise. Don't be quiet."
 
-    say "Tapping? Running?"
-    kr "Like... 'tekeke.' People call her Tekeke. But she is not only 'tekeke.'"
+say "Tapping? Running?"
+kr "Like... 'tekeke.' People call her Tekeke. But she is not only 'tekeke.'"
 
-    ak "You're scaring us, Kashima."
+ak "You're scaring us, Kashima."
 
-    kr "Sorry. I don't mean I only remember the ending."
+kr "Sorry. I don't mean I only remember the ending."
 
 #####MORE AUDIO NOISE
-    jump bus_arrival
+jump bus_arrival
 
 
 
