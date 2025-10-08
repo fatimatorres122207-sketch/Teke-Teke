@@ -54,11 +54,6 @@ define narrator = Character("", callback=type_sound)
 
 
 
-
-
-
-
-
 #CHARACTERS
 define kr = Character("Kashima Reiko")
 # teke teke girl
@@ -74,46 +69,137 @@ define yu = Character("Yuki", color="#ffffff", callback=type_sound)
 
 
 
-
-
-
-
-
-
-
-
-
-
 label start:
 
-    scene bus-stop_spring_night
+
+"What is your name?"
+$ povname = renpy.input("",length=20)
+if not povname:
+ $ povname = "MC"
+
+
+    scene bg busstop_spring_night
+    with fade
+
+
+
+pov "Three of my friends are waiting near the train station for me. I better hurry."
+
+    scene bg busstop_spring_night
+    with fade
+
 
 menu:
     "HIII":
         yu "ello"  
-        jump picture
+        jump answer
     "Wasup":
         yu "whats good"
-        jump picture
+        jump answer
     "YO":
         "What's going on?"
-        jump picture
+        jump answer
     "What's up?":
         yu "oh you know"
-        jump picture
+        jump answer
 
 
-label picture:
-
-    "So do you wanna walk around after school, and like take some photos at night?":
-        yu  "Sure!"
-# swap to a different scene, maybe a cafe scene?
-
-    yu "hey lets go to a cafe so we can get some work done?"
+label answer:
 
 
+pov "It's so quiet."
 
-    return
+ak "The early trains are canceled and the next bus won't come for a long time."
+
+say "It's fine. We'll take the late train together."
+
+kr "Excuse me..."
+kr "Do you know when the next bus comes?"
+
+say "oh! Um, I'm not entirely sure but maybe in an hour?"
+
+say "And um are you okay?"
+
+kr "My leg won't let me walk far. I was trying to get home."
+
+
+
+
+
+
+
+
+
+
+
+    menu:
+        "Offer to sit with her":
+            jump sit_with
+        "Keep a cautious distance":
+            jump cautious_distance
+
+
+
+
+
+
+
+
+
+label sit_with:
+    say "Sit here. We'll wait with you."
+
+    kr "Thank you." 
+
+    ak "What's your name?"
+
+    kr "Kashima Reiko."
+
+    ak "Do you live nearby, Kashima-san?"
+
+    kr "Not anymore. The last place I remember had sliding doors, a corridor… a sound like scraping metal."
+
+    say "Scraping metal?"
+
+    kr "You wouldn't want to hear it."
+
+######Add audio for teke sound
+play sound "audio/bus_idle.ogg" fadein 0.2
+    pause 0.8
+
+    kr "They told me not to come here after midnight."
+
+    ak "Who told you that?"
+
+    kr "People on late trains. An old woman. A radio. I can't— sometimes I wake up and the floor is different."
+
+    say "You mean... like a memory that doesn't belong to you?"
+
+    kr "Yes. Bits. Pieces. There's one that repeats: I run, and the floor is only half beneath me."
+
+
+
+#####ADD SOME FLICKERING STUFF
+
+    kr "Can I ask a favor?"
+
+    ak "Of course."
+    kr "If... if you ever hear the tapping of two things running, please—make more noise. Don't be quiet."
+
+    say "Tapping? Running?"
+    kr "Like... 'tekeke.' People call her Tekeke. But she is not only 'tekeke.'"
+
+    ak "You're scaring us, Kashima."
+
+    kr "Sorry. I don't mean I only remember the ending."
+
+#####MORE AUDIO NOISE
+    jump bus_arrival
+
+
+
+
+
 
 
 
