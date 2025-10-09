@@ -239,8 +239,14 @@ kr "they hear us"
 ak "W-what, your scaring me..."
 pov "yea are you ok?"
 
-#### bus arival noise
+#### bus arrival noise
 jump bus_arrival
+
+
+##### we should make a option where if they dont get on the bus because of teke girl then they see her in a alley or somthing
+##### and if they get on the bus then they play a mini game or somthing where if they lose they die, and if they escape then they get out and game ends
+##### same thing for alley and score determines the ending scene
+
 
 
 
