@@ -209,6 +209,40 @@ jump bus_arrival
 
 
 
+##### cautious distance
+
+label cautious_distance
+
+say "What happened to your leg?"
+
+kr "Insert what happened here"
+
+ak "wow thats... unfortunate." #### i dont know what to say what happened to her leg so im just gonna have templace placement text we can change
+##### i also didnt know how you wanted the story to progress so i added this
+##### with our remaining time frame i say we get straight into the mini game and make it super super short we might not be able to get a artist
+
+pov "Would it be better to just walk?"
+
+say "I mean we could... but its late and cold out."
+ak "Yea, and I dont really know my way back."
+
+##### instert creepy music?
+
+kr "I wouldnt at this time tekeke could be out at this time"
+say "tekeke?"
+
+kr "if you ever hear the sound of two things tapping, make more noise"
+kr "they dont like me on trains"
+kr "the people on buses"
+kr "they hear us"
+
+ak "W-what, your scaring me..."
+pov "yea are you ok?"
+
+#### bus arival noise
+jump bus_arrival
+
+
 
 
 
