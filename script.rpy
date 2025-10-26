@@ -1,4 +1,20 @@
-#####TYPEINGSOUNDS
+# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+
+
+##pick between one of the two and add an # to the other to keep it
+
+##regular taps, medium intervals
+#define sounds = ['audio/A1.ogg', 'audio/A2.ogg', 'audio/A3.ogg', 'audio/A4.ogg', 'audio/A5.ogg']
+
+##light taps, smaller intervals
+#define sounds = ['audio/B1.ogg', 'audio/B2.ogg', 'audio/B3.ogg', 'audio/B4.ogg', 'audio/B5.ogg']
+
+
+##both combined
 define sounds = ['audio/A1.ogg', 'audio/A2.ogg', 'audio/A3.ogg', 'audio/A4.ogg', 'audio/A5.ogg', 'audio/B1.ogg', 'audio/B2.ogg', 'audio/B3.ogg', 'audio/B4.ogg', 'audio/B5.ogg']
 
 init python:
@@ -46,59 +62,73 @@ init python:
             renpy.sound.stop()
 
 
+#example of a character with the typing sound
 define Type = Character("", callback=type_sound)
-define NoType = Character("")
-define narrator = Character("", callback=type_sound)
 
 
 
 
 
-#CHARACTERS
-define kr = Character("Kashima Reiko")
-# teke teke girl
-
-define ak = Character("Akari")
-# random girl? I don't know what to set her as
-
-define say = Character("Sayuri")
-
-# another random girl
-define yu = Character("Yuki", color="#ffffff", callback=type_sound)
-
-########PLAYER
-define pov = Character("[povname]")
-define pov = Character("[povname]", color = "#78637B")
+define kr = Character("Kashima", image="kashima", color="#ffffff", callback=type_sound)
+image kashima:
+    "side kashima.png"
 
 
 
+
+# Define a transform for Sayuri to appear on the right
+transform right_side:
+    xpos 0.8      # 0.0 = left, 0.5 = center, 1.0 = right
+    ypos 0.6
+    linear 0.25 yoffset -10
+    linear 0.25 yoffset 0
+
+# Define a transform for Yuki to appear on the left
+transform left_side:
+    xpos 0.0
+    ypos 0.6
+    linear 0.25 yoffset -10
+    linear 0.25 yoffset 0
+
+# --- Yuki setup ---
+image yuki = "side yuki.png"
+
+init python:
+    def yuki_jump_callback(event, interact=True, **kwargs):
+        if event == "show":
+            renpy.show("yuki", at_list=[left_side])
+        return None
+
+define yu = Character("Yuki", color="#ffffff", callback=yuki_jump_callback)
+
+
+# --- Sayuri setup ---
+image sayuri = "side sayuri.png"
+
+init python:
+    def sayuri_jump_callback(event, interact=True, **kwargs):
+        if event == "show":
+            renpy.show("sayuri", at_list=[right_side])
+        return None
+
+define say = Character("Sayuri", color="#ffffff", callback=sayuri_jump_callback)
+
+
+# --- Script ---
 label start:
+    scene bg buscheck
 
-
-"What is your name?"
-$ povname = renpy.input("",length=20)
-if not povname:
- $ povname = "MC"
-
-
-scene bg busstop
-
-
-
-pov "Three of my friends are waiting near the train station for me. I better hurry."
-
-scene bg busstop
-
+    jump menu1
 
 
 label menu1:
     menu:
         "HIII":
-            yu "ello"
+            yu "Hii!"
             jump answer
 
         "Wasup":
-            yu "whats good"
+            yu "Nothing much."
             jump answer
 
         "YO":
@@ -106,33 +136,28 @@ label menu1:
             jump answer
 
         "What's up?":
-            yu "oh you know"
+            yu "Oh you know."
+            yu "Nothing really, just waiting for you."
             jump answer
 
 
-
-
-
-
 label answer:
-    # Add your dialogue or logic here
-    yu "So, what do you want to do next?"
+    say "It's so quiet."
 
 
-pov "It's so quiet."
 
-ak "The early trains are canceled and the next bus won't come for a long time."
+yu "The early trains are canceled and the next bus won't come for a long time."
 
-say "It's fine. We'll take the late train together."
+yu "Although it's okay! We'll take the late train together."
 
 kr "Excuse me..."
 kr "Do you know when the next bus comes?"
 
-say "oh! Um, I'm not entirely sure but maybe in an hour?"
+yu "oh! Um, I'm not entirely sure but maybe in an hour?"
 
-say "And um are you okay?"
+yu "And um are you okay?"
 
-kr "My leg won't let me walk far. I was trying to get home."
+kr "My legs won't let me walk far. I was trying to get home."
 
 
 
@@ -154,6 +179,22 @@ label menu2:
 
 
 
+label cautious_distance:
+
+kr "Can you help me I seriously need help..."
+kr "I can't feel my legs."
+kr "Where are they?"
+
+label menu3:
+    menu:
+        "Answer":
+            jump answer
+
+        "Don't answer":
+            jump dontanswer
+
+
+
 
 
 label sit_with:
@@ -161,95 +202,55 @@ label sit_with:
 
     kr "Thank you." 
 
-    ak "What's your name?"
+    say "What's your name?"
 
     kr "Kashima Reiko."
 
-    ak "Do you live nearby, Kashima-san?"
+    yu "Do you live nearby, Kashima-san?"
 
-    kr "Not anymore. The last place I remember had sliding doors, a corridor… a sound like scraping metal."
-
-    say "Scraping metal?"
-
-    kr "You wouldn't want to hear it."
-
-######Add audio for teke sound
-play sound "audio/bus_idle.ogg" fadein 0.2
+    kr "....."
+  
+    yu "Kashima-san?"
 
 
+    kr "Can I ask a question?"
 
-kr "They told me not to come here after midnight."
-
-ak "Who told you that?"
-
-kr "People on late trains. An old woman. A radio. I can't— sometimes I wake up and the floor is different."
-
-say "You mean... like a memory that doesn't belong to you?"
-
-kr "Yes. Bits. Pieces. There's one that repeats: I run, and the floor is only half beneath me."
+    yu "Of course."
 
 
+    kr "Where are my legs?"
 
-#####ADD SOME FLICKERING STUFF
 
-kr "Can I ask a favor?"
+label menu3:
+    menu:
+        "Answer":
+            jump answer
 
-ak "Of course."
-kr "If... if you ever hear the tapping of two things running, please—make more noise. Don't be quiet."
-
-say "Tapping? Running?"
-kr "Like... 'tekeke.' People call her Tekeke. But she is not only 'tekeke.'"
-
-ak "You're scaring us, Kashima."
-
-kr "Sorry. I don't mean I only remember the ending."
-
-#####MORE AUDIO NOISE
-jump bus_arrival
+        "Don't answer":
+            jump dontanswer
 
 
 
-##### cautious distance
+label answer:
 
-label cautious_distance
-
-say "What happened to your leg?"
-
-kr "Insert what happened here"
-
-ak "wow thats... unfortunate." #### i dont know what to say what happened to her leg so im just gonna have templace placement text we can change
-##### i also didnt know how you wanted the story to progress so i added this
-##### with our remaining time frame i say we get straight into the mini game and make it super super short we might not be able to get a artist
-
-pov "Would it be better to just walk?"
-
-say "I mean we could... but its late and cold out."
-ak "Yea, and I dont really know my way back."
-
-##### instert creepy music?
-
-kr "I wouldnt at this time tekeke could be out at this time"
-say "tekeke?"
-
-kr "if you ever hear the sound of two things tapping, make more noise"
-kr "they dont like me on trains"
-kr "the people on buses"
-kr "they hear us"
-
-ak "W-what, your scaring me..."
-pov "yea are you ok?"
-
-#### bus arrival noise
-jump bus_arrival
-
-
-##### we should make a option where if they dont get on the bus because of teke girl then they see her in a alley or somthing
-##### and if they get on the bus then they play a mini game or somthing where if they lose they die, and if they escape then they get out and game ends
-##### same thing for alley and score determines the ending scene
+say "Right here..."
+say "Wait..."
+say "Why is there nothing there?"
+return
 
 
 
+label dontanswer:
 
+yu "ON THE MEISHIN RAILWAY!"
+yu "....."
+yu "SAY IT!"
+say "On the Meishin Railway..."
+kr "...."
+yu "Sayori..."
+yu "I think she's this urban legand I've heard about..."
+yu "That's the only question I knew how to answer but we need to answer them all right or..."
+yu "She might kill us!"
 
 
 
