@@ -1,3 +1,5 @@
+
+
 # The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
@@ -125,23 +127,23 @@ label menu1:
     menu:
         "HIII":
             yu "Hii!"
-            jump answer
+            jump answer1
 
         "Wasup":
             yu "Nothing much."
-            jump answer
+            jump answer1
 
         "YO":
             yu "What's going on?"
-            jump answer
+            jump answer1
 
         "What's up?":
             yu "Oh you know."
             yu "Nothing really, just waiting for you."
-            jump answer
+            jump answer1
 
 
-label answer:
+label answer1:
     say "It's so quiet."
 
 
@@ -221,14 +223,13 @@ label sit_with:
     kr "Where are my legs?"
 
 
-label menu3:
+label menu4:
     menu:
         "Answer":
             jump answer
 
         "Don't answer":
             jump dontanswer
-
 
 
 label answer:
@@ -251,6 +252,11 @@ yu "Sayori..."
 yu "I think she's this urban legand I've heard about..."
 yu "That's the only question I knew how to answer but we need to answer them all right or..."
 yu "She might kill us!"
+
+
+
+
+
 
 
 
