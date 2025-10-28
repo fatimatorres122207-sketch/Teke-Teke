@@ -278,7 +278,11 @@ say "We have to get the hell out of here!"
                     #### death
                 "Right":
                      "go to woods":
-                         #### I don't know what to put for this
+                         say "IT'S A DEAD END!!"
+                        yu "MASK DEATH DEMON"
+                            ####then maybe have a thing where she goes into a bright light and like vanishes or they both wake up on the park bench or somthing???
+
+
         "Left":
         
             "Straight":
@@ -293,6 +297,7 @@ say "We have to get the hell out of here!"
 
 
     
+
 
 
 
