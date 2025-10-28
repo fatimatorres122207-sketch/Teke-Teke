@@ -237,7 +237,8 @@ label answer:
 say "Right here..."
 say "Wait..."
 say "Why is there nothing there?"
-return
+
+jump Running
 
 
 
@@ -249,9 +250,55 @@ yu "SAY IT!"
 say "On the Meishin Railway..."
 kr "...."
 yu "Sayori..."
-yu "I think she's this urban legand I've heard about..."
-yu "That's the only question I knew how to answer but we need to answer them all right or..."
+yu "I think she's this urban legend I've heard about..."
+yu "That's the only question I knew how to answer, but we need to answer them all right or..."
 yu "She might kill us!"
+
+jump Running
+
+label Running:
+kr "teke..."
+kr "teke.....teke"
+kr "teke.....teke.....teke"
+
+menu5:
+    "RUN!":
+    jump Running2
+
+label Running2:
+
+say "We have to get the hell out of here!"
+
+    menu6:
+        "Right":
+            "straight":
+                "Left":
+                kr "Teke... Teke"
+                    return
+                    #### death
+                "Right":
+                     "go to woods":
+                         #### I don't know what to put for this
+        "Left":
+        
+            "Straight":
+
+
+                "Alley":
+                    kr "Teke...teke"
+                        return
+
+
+
+
+
+    
+
+
+
+
+
+
 
 
 
