@@ -276,13 +276,48 @@ say "We have to get the hell out of here!"
         "Left":
         jump Left1
 
-label Right1
+label Right1:
 
 yu "Where do we go now???"
 
 menu7:
     "straight":
     jump straight
+
+label  straight:
+       "Forrest"
+      jump Forrest
+
+label Forrest:
+
+ say "It's a dead end!!"
+ yu  "I think I hear her coming!! "
+
+ kr  "WHERE ARE MY LEGS???"
+
+ say "QUICK, WHAT ARE WE SUPPOSED TO SAY???"
+
+menu8:
+  "Meishin Expressway":
+     
+  "On The Road":
+    jump DEATH
+  "Back On The Bus??":
+
+
+
+
+
+
+
+
+
+
+
+
+
+label DEATH:
+  return
 
 
 
@@ -293,6 +328,7 @@ menu7:
 
 
     
+
 
 
 
