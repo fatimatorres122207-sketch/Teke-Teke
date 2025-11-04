@@ -1,4 +1,4 @@
-
+ 
 
 # The script of the game goes in this file.
 
@@ -271,32 +271,29 @@ say "We have to get the hell out of here!"
 
     menu6:
         "Right":
-            "straight":
-                "Left":
-                kr "Teke... Teke"
-                    return
-                    #### death
-                "Right":
-                     "go to woods":
-                         say "IT'S A DEAD END!!"
-                        yu "MASK DEATH DEMON"
-                            ####then maybe have a thing where she goes into a bright light and like vanishes or they both wake up on the park bench or somthing???
-
+        jump Right1
 
         "Left":
-        
-            "Straight":
+        jump Left1
+
+label Right1
+
+yu "Where do we go now???"
+
+menu7:
+    "straight":
+    jump straight
 
 
-                "Alley":
-                    kr "Teke...teke"
-                        return
+
+
 
 
 
 
 
     
+
 
 
 
