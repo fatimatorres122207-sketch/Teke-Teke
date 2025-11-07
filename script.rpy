@@ -269,6 +269,7 @@ label Running2:
 
 say "We have to get the hell out of here!"
 
+ scene bg nightcity
     menu6:
         "Right":
         jump Right1
@@ -289,7 +290,8 @@ label  straight:
       jump Forrest
 
 label Forrest:
-
+     scene bg forrest
+ 
  say "It's a dead end!!"
  yu  "I think I hear her coming!! "
 
@@ -382,6 +384,7 @@ label DEATH:
 
 
     
+
 
 
 
