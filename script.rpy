@@ -299,15 +299,69 @@ label Forrest:
 
 menu8:
   "Meishin Expressway":
-     
-  "On The Road":
+    jump Question2
+     "On The Road":
     jump DEATH
+
+
   "Back On The Bus??":
+    jump DEATH
+
+"Back at home?":
+    jump DEATH
+
+#######################################
+
+
+label Question2
+
+kr "WHO TOLD YOU????"
+
+menu9:
+    "Kashima Reiko":
+jump Question3
+    "The Devil":
+jump DEATH
+    "The Black Man":
+jump DEATH
+################################
 
 
 
 
+label Question3:
 
+kr "WHAT'S MY NAME??"
+
+menu10:
+    "The Devil!!":
+    jump DEATH
+    "Kashima Reiko!":
+    jump DEATH
+    "Mask Death Demon!":
+    jump endstretch
+########################
+
+label endstretch:
+
+yu    "SHE VANISHED?????"
+
+say    "I-"
+
+say    "I don't know"
+
+
+yu     "What now?"
+
+say    "We never tell anyone about this....."
+
+yu     "THANK YOU FOR PLAYING OUR GAME!!!!"
+
+say    "WE ARE STILL LEARNING SO BEAR WITH US!"
+
+yu     "MORE COMING SOON?"
+
+return
 
 
 
@@ -328,6 +382,7 @@ label DEATH:
 
 
     
+
 
 
 
